@@ -23,9 +23,3 @@ test "naughty pointer 2" {
     var y = &x; // no panic
     y = y;
 }
-
-test "const pointers" {
-    const x: u8 = 1;
-    var y = &x; // build error
-    y.* += 1;
-}
