@@ -98,3 +98,21 @@ test "custom writer" {
     _ = try bytes.writer().write(" Writer!");
     try expect(eql(u8, bytes.items, "Hello Writer!"));
 }
+
+test "array" {
+    const data = "Hello!";
+    const bytes = data[data.len..];
+    try expect(bytes.len == 0);
+    try expect(eql(u8, bytes, ""));
+}
+
+test "array2" {
+    const hello_world = "Hello World!";
+    try expect(hello_world.len == 12);
+    try expect(eql(u8, hello_world, "Hello World!"));
+
+    const hello = "Hello";
+    const world = hello_world[hello.len..];
+    try expect(world.len == 7);
+    try expect(eql(u8, world, " World!"));
+}
