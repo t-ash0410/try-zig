@@ -1,7 +1,4 @@
 const std = @import("std");
-// const expect = std.testing.expect;
-// const eql = std.mem.eql;
-// const test_allocator = std.testing.allocator;
 
 test "random numbers" {
     var prng = std.rand.DefaultPrng.init(blk: {
